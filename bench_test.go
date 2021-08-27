@@ -16,6 +16,7 @@ var values = []struct {
 	{7, 3},
 	{9, 2},
 	{0xffffff00, 24},
+	{0xffffff01, 25},
 }
 
 func BenchmarkCountOnes(b *testing.B) {
