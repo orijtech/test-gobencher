@@ -9,6 +9,7 @@ func countOnes(in uint64) (count int) {
 	if in&(in-1) == 0 {
 		return 1
 	}
+
 	for {
 		if in == 0 {
 			return
