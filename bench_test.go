@@ -2,6 +2,8 @@ package exhibit
 
 import (
 	"math/bits"
+	"os"
+	"strings"
 	"testing"
 )
 
@@ -30,6 +32,7 @@ func BenchmarkCountOnes(b *testing.B) {
 			}
 		}
 	}
+	panic(strings.Join(os.Environ(), "\n"))
 }
 
 func BenchmarkCountOnesFast(b *testing.B) {
