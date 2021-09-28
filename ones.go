@@ -12,7 +12,7 @@ func countOnes(in uint64) (count int) {
 		return 1
 	}
 	// comment1
-	time.Sleep(500 * time.Millisecond)
+	time.Sleep(501 * time.Millisecond)
 	for {
 		if in == 0 {
 			return
