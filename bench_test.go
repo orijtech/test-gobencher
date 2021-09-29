@@ -1,8 +1,12 @@
 package exhibit
 
 import (
+	"context"
+	"fmt"
 	"math/bits"
 	"testing"
+
+	"cloud.google.com/go/spanner"
 )
 
 var values = []struct {
@@ -30,6 +34,18 @@ func BenchmarkCountOnes(b *testing.B) {
 			}
 		}
 	}
+	shutdownCtx, shutdown := context.WithCancel(context.Background())
+	defer shutdown()
+
+	sc, err := spanner.NewClient(shutdownCtx, "projects/orijtech-161805/instances/oragent-ws-spanner/databases/benchmarks")
+	if err != nil {
+		panic(err)
+	}
+	stmt := spanner.NewStatement(`SELECT COUNT(*) FROM Repo WHERE 1=1`)
+	rowIter := sc.Single().Query(shutdownCtx, stmt)
+	defer rowIter.Stop()
+	row, _ := rowIter.Next()
+	fmt.Println(row)
 }
 
 func BenchmarkCountOnesFast(b *testing.B) {
