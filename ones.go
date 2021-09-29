@@ -1,6 +1,6 @@
 package exhibit
 
-// Counts the number of ones in an unsigned integer.
+// countOnes the number of ones in an unsigned integer.
 // Similar to POPCOUNT, or commonly known as Hamming distance.
 
 func countOnes(in uint64) (count int) {
