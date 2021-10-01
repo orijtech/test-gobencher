@@ -1,0 +1,3 @@
+global:
+    reg_min: 2200 # Setting this super high
+    imp_min: -5
