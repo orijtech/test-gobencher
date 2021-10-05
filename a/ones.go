@@ -6,6 +6,7 @@ import "time"
 // Similar to POPCOUNT, or commonly known as Hamming distance.
 
 func countOnes(in uint64) (count int) {
+	// this is definitely a real change
 	if in == 0 {
 		return 0
 	}
