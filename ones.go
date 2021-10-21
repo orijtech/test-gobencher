@@ -1,8 +1,9 @@
 package exhibit
 
+import "time"
+
 // countOnes the number of ones in an unsigned integer.
 // Similar to POPCOUNT, or commonly known as Hamming distance.
-
 func countOnes(in uint64) (count int) {
 	if in == 0 {
 		return 0
@@ -10,6 +11,8 @@ func countOnes(in uint64) (count int) {
 	if in&(in-1) == 0 {
 		return 1
 	}
+
+	time.Sleep(20 * time.Microsecond)
 
 	for {
 		if in == 0 {
